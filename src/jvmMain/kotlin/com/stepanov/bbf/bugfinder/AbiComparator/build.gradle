@@ -1,0 +1,38 @@
+package com.stepanov.bbf.bugfinder.AbiComparator
+
+buildscript {
+    ext {
+        asm_debug_version = '6.0_BETA'
+        apache_commons_text_version = '1.8'
+        kotlinx_metadata_version = '0.1.0'
+        diff_version = '4.5'
+        kotlin_version = '1.4.0'
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+    id 'application'
+}
+
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
+}
+
+dependencies {
+    implementation "org.ow2.asm:asm-debug-all:$asm_debug_version"
+    implementation "org.apache.commons:commons-text:$apache_commons_text_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-metadata-jvm:$kotlinx_metadata_version"
+    implementation "io.github.java-diff-utils:java-diff-utils:$diff_version"
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+}
+
+application {
+    mainClassName = 'AbiComparatorKt'
+}

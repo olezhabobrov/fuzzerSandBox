@@ -1,4 +1,4 @@
-
+package com.stepanov.bbf
 import com.stepanov.bbf.reduktor.util.MsgCollector
 import org.jetbrains.kotlin.cli.bc.K2Native
 import org.jetbrains.kotlin.cli.bc.K2NativeCompilerArguments
